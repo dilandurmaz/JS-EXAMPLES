@@ -53,3 +53,6 @@ console.log(false || false)
 
 // EMPTY VALUES
 
+// We have two special values there are null and undefined.They carry no information.The difference in meaning is insignificant.
+
+
