@@ -71,10 +71,30 @@ if(string=="hello"){
     console.log(string +" "+"world");
 }
 // If-else using
+// PS:JavaScript isNaN method checks if the value / variable it gets is a digit.Returns true if it is not a digit.
 let theNumber = Number(prompt("Pick a number"));
-if (!Number.isNaN(theNumber)) {
+if (!Number.isNaN(theNumber)) {       
   console.log("Your number is the square root of " +
               theNumber * theNumber);
 } else {
-  console.log("Hey. Why didn't you give me a number?");
+  console.log("Please enter the number?");
+}
+
+// If-else if-else
+// If you have more than two paths to choose from, you can “chain” multiple if/else pairs together. 
+let n = 80;
+if (n < 10) {
+  console.log("Small");
+} else if (n < 100) {
+  console.log("Medium");
+} else {
+  console.log("Large");
+}
+// --->Medium
+
+// while and do loops
+let sayi=1;
+while (number <= 13) {
+  console.log(sayi);
+  sayi = sayi + 2;
 }
