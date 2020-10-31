@@ -92,9 +92,71 @@ if (n < 10) {
 }
 // --->Medium
 
-// while and do loops
+// while loop
 let sayi=1;
-while (number <= 13) {
+while (sayi <= 13) {
   console.log(sayi);
   sayi = sayi + 2;
 }
+// --> 1 3 5 7 9 11 13
+// do loop
+let yourName;
+do {
+  yourName = prompt("Who are you?");
+} while (!yourName);
+console.log(yourName);
+
+// for loops
+for (let numb = 1; numb <= 13; numb = numb + 2) {
+  console.log(numb);
+}
+// --> 1 3 5 7 9 11 13
+
+// Breaking Out of a Loop  
+// We can exit the loop with the break command.
+for (let current = 20; ; current = current + 1) {
+  if (current % 7 == 0) {
+    console.log(current);
+    break;
+  }
+}
+// → 21
+
+// Updating bindings succinctly
+// sayac = sayac + 1; this situation equals the sayac += 1;
+// sayac = sayac - 1; this situation equals the sayac -= 1;
+// For sayac += 1 and sayac-= 1, there are even shorter equivalents: sayac++ and sayac--.
+
+
+// Dispatching on a value with switch
+var say=1; 
+switch (say){
+  case 0: 
+    console.log("say is equal to 0");
+    break;
+  case 1: 
+    console.log("say is equal to 1");
+    break; 
+  default: 
+    console.log("say value is empty");
+}
+
+// PS: We can add the comment line with //.
+
+for(let symbol="#";symbol.length<8;symbol.length++){
+  console.log(symbol.length);
+}
+
+// AN EXAMPLE
+let star = "*";
+for(let i=0; i< 5; i++) {
+console.log(star);
+star = "*" + star ;
+}
+
+//--> *
+//--> **
+//--> ***
+//--> ****
+//--> *****
+
