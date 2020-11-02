@@ -153,6 +153,8 @@ Factorial(3);
 
 // An Example
 
+//We have seen the min function before. Let's write this function ourselves.
+
 const min = (num1,num2)=>{
     if(num1<num2){
         console.log(num1);
