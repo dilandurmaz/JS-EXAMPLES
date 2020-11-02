@@ -124,3 +124,47 @@ console.log(power(2, 6));
 
 
 // Closure
+
+// In the example, multiplier is called and creates an environment in which its factor parameter is bound to 2.
+// The function value it returns, which is stored in twice, remembers this environment. 
+// So when that is called, it multiplies its argument by 2.
+
+function multiplier(factor) {
+    return number => number * factor;
+} 
+let twice = multiplier(2);
+console.log(twice(3));
+// → 6
+
+
+// Recursion
+
+// Recursion is simply calling the function itself.
+function Factorial(n) {
+    if (n === 1) {
+        return n;
+    } else {
+        return n * Factorial(n - 1);
+    }
+}
+Factorial(3);
+//--> 6
+
+
+// An Example
+
+const min = (num1,num2)=>{
+    if(num1<num2){
+        console.log(num1);
+    }
+    else if(num2<num1){
+        console.log(num2);
+    }
+    else{
+        console.log("Equal");
+    }
+}
+min(-5,10);
+// --> -5
+min(10,0);
+// --> 0
