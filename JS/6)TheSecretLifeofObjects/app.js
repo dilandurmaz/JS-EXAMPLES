@@ -101,6 +101,106 @@ console.log(String(sadDog));
 
 // Symbols
 
+// Symbols are unique and not created twice.
+
+let sym = Symbol("name");
+Dogs.prototype[sym] = 55;
+console.log(sadDog[sym]);
+// → 55
+
+// symbol example
+const toStringSymbol = Symbol("toString");
+Array.prototype[toStringSymbol] = function() {
+  return `${this.length} cm of blue yarn`;
+};
+console.log([1, 2].toString());
+// → 1,2
+console.log([1, 2][toStringSymbol]());
+// → 2 cm of blue yarn
+
+// other method;
+let stringObject = {
+  [toStringSymbol]() { return "a car;" }
+};
+console.log(stringObject[toStringSymbol]());
+// → a car
 
 
+// The iterator interface
+
+// When called, that method should return an object that provides a second interface, iterator. 
+let okIterator = "HE"[Symbol.iterator]();
+console.log(okIterator.next());
+// → {value: "H", done: false}
+console.log(okIterator.next());
+// → {value: "E", done: false}
+console.log(okIterator.next());
+// → {value: undefined, done: true}
+
+
+// GET, SET
+
+//We use the set method when we assign a value to the variable, and the get method when we try to read the value of the variable.
+class Animal {
+  constructor(name) {
+    this._name = name;
+  }
+  get Name() {
+    return "Hello " + this._name;
+  }
+  set Name(newValue) {
+    this._name = newValue;
+  }
+}
+var vAnimal = new Animal("Tom");
+console.log(vAnimal.Name);
+
+vAnimal.Name = "Boncuk";
+console.log(vAnimal.Name);
+
+// Inheritance
+
+class Shape {
+  constructor (id, x, y) {
+    this.id = id
+    this.move(x, y)
+  }
+  move (x, y) {
+    this.x = x
+    this.y = y
+  }
+}
+class Rectangle extends Shape {
+   constructor (id, x, y, width, height) {
+     super(id, x, y)
+     this.width  = width
+     this.height = height
+   }
+}
+const rec = new Rectangle(1,5,10,15,10);
+console.log(rec);
+// -->Rectangle {id: 1, x: 5, y: 10, width: 15, height: 10}7
+rec.move(21,30);
+console.log(rec);
+// -->Rectangle {id: 1, x: 21, y: 30, width: 15, height: 10}
+
+
+// TERNARY OPERATOR (?)
+
+function getFee(isMember) {
+  return isMember ? " $5" : "$10";
+}
+console.log(getFee(true));
+// --> $5
+console.log(getFee(false));
+//-->  $10
+console.log(getFee(1));
+// --> $5
+
+
+//  Anonymous Function
+// This function is called with variable name.
+var x = function (a, b) {console.log(a * b)};
+var z = x(4, 3);
+// -->12
 
